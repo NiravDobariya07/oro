@@ -1,0 +1,11 @@
+services:
+    # Default configuration for services in this bundle
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    # Make classes in Controller/ public and tag them as controllers
+    Acme\Bundle\CustomBundle\Controller\:
+        resource: '../../Controller/*'
+        tags: ['controller.service_arguments']

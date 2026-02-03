@@ -1,0 +1,54 @@
+Error {#17682
+  #message: "Failed opening required '/var/www/html/oro_new/var/cache/prod/doctrine/orm/Proxies/__CG__OroBundleEntityConfigBundleEntityEntityConfigModel.php' (include_path='.:/usr/share/php')"
+  #code: 0
+  #file: "./vendor/doctrine/common/src/Proxy/AbstractProxyFactory.php"
+  #line: 199
+  trace: {
+    ./vendor/doctrine/common/src/Proxy/AbstractProxyFactory.php:199 { …}
+    ./vendor/doctrine/common/src/Proxy/AbstractProxyFactory.php:111 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/Proxy/ProxyFactory.php:130 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/UnitOfWork.php:2989 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php:273 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php:502 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/ObjectHydrator.php:150 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/Internal/Hydration/AbstractHydrator.php:270 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php:1225 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php:1166 { …}
+    ./vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php:901 { …}
+    ./vendor/oro/platform/src/Oro/Bundle/EntityConfigBundle/Entity/Repository/FieldConfigModelRepository.php:56 { …}
+    ./vendor/oro/platform/src/Oro/Bundle/EntityConfigBundle/Manager/AttributeManager.php:128 { …}
+    ./vendor/oro/commerce/src/Oro/Bundle/ProductBundle/EventListener/WebsiteSearchMappingListener.php:55 { …}
+    ./vendor/symfony/event-dispatcher/EventDispatcher.php:260 { …}
+    ./vendor/symfony/event-dispatcher/EventDispatcher.php:220 { …}
+    ./vendor/symfony/event-dispatcher/EventDispatcher.php:56 { …}
+    ./vendor/oro/platform/src/Oro/Bundle/SearchBundle/Provider/SearchMappingProvider.php:96 { …}
+    ./vendor/oro/platform/src/Oro/Bundle/SearchBundle/Provider/SearchMappingProvider.php:50 { …}
+    ./vendor/oro/commerce/src/Oro/Bundle/WebsiteSearchBundle/Command/ReindexCommand.php:286 { …}
+    ./vendor/oro/commerce/src/Oro/Bundle/WebsiteSearchBundle/Command/ReindexCommand.php:56 { …}
+    ./vendor/symfony/console/Command/Command.php:137 { …}
+    ./vendor/oro/commerce/src/Oro/Bundle/WebsiteSearchBundle/Command/ReindexCommand.php:37 { …}
+    ./var/cache/prod/ContainerVK5Fahx/getReindexCommand2Service.php:35 {
+      ContainerVK5Fahx\getReindexCommand2Service::do($container, $lazyLoad = true)
+      › 
+      › $container->privates['Oro\\Bundle\\WebsiteSearchBundle\\Command\\ReindexCommand'] = $instance = new \Oro\Bundle\WebsiteSearchBundle\Command\ReindexCommand(($container->services['doctrine'] ?? self::getDoctrineService($container)), $a, $b);
+      › 
+    }
+    ./var/cache/prod/ContainerVK5Fahx/AppKernelProdContainer.php:3048 { …}
+    ./vendor/symfony/dependency-injection/Container.php:403 { …}
+    ./vendor/symfony/dependency-injection/Argument/ServiceLocator.php:40 { …}
+    ./vendor/symfony/console/CommandLoader/ContainerCommandLoader.php:43 { …}
+    ./vendor/symfony/console/Application.php:626 { …}
+    ./vendor/symfony/console/Application.php:817 { …}
+    ./vendor/symfony/framework-bundle/Console/Application.php:164 { …}
+    ./vendor/symfony/console/Application.php:639 { …}
+    ./vendor/symfony/console/Application.php:661 { …}
+    ./vendor/symfony/console/Application.php:729 { …}
+    ./vendor/symfony/framework-bundle/Console/Application.php:143 { …}
+    ./vendor/symfony/console/Application.php:266 { …}
+    ./vendor/symfony/framework-bundle/Console/Application.php:80 { …}
+    ./vendor/symfony/console/Application.php:175 { …}
+    ./vendor/symfony/runtime/Runner/Symfony/ConsoleApplicationRunner.php:49 { …}
+    ./vendor/autoload_runtime.php:37 { …}
+    ./bin/console:16 { …}
+  }
+}

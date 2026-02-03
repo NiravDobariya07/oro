@@ -1,0 +1,22 @@
+navigation:
+    menu_config:
+        items:
+            acme_customer_note_list:
+                label: 'acme.customer_note.entity_plural_label'
+                route: 'acme_customer_note_index'
+                extras:
+                    routes: ['acme_customer_note_*']
+                    description: 'acme.customer_note.entity_description'
+
+        tree:
+            application_menu:
+                children:
+                    customers_tab:
+                        children:
+                            acme_customer_note_list: ~
+
+    titles:
+        acme_customer_note_index: 'acme.customer_note.entity_plural_label'
+        acme_customer_note_view: 'acme.customer_note.entity_label'
+        acme_customer_note_update: 'acme.customer_note.entity_label'
+        acme_customer_note_create: 'acme.customer_note.entity_label'

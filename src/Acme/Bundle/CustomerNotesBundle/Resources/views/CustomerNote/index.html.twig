@@ -1,0 +1,15 @@
+{% extends '@OroUI/actions/index.html.twig' %}
+{% import '@OroUI/macros.html.twig' as UI %}
+
+{% set gridName = 'acme-customer-note-grid' %}
+{% set pageTitle = 'Customer Notes' %}
+
+{% block navButtons %}
+    <div class="btn-group">
+        {{ UI.addButton({
+            'path' : path('acme_customer_note_create'),
+            'entity_label': 'Customer Note',
+            'title': 'Create Customer Note'
+        }) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,4 @@
+acme_customer_notes:
+    resource: '@AcmeCustomerNotesBundle/Controller/'
+    type: attribute
+    prefix: /

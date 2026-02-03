@@ -1,0 +1,20 @@
+acme_custom:
+    resource: '@AcmeCustomBundle/Resources/config/routing.yml'
+    prefix: /
+
+acme_customer_notes:
+    resource: '@AcmeCustomerNotesBundle/Resources/config/routing.yml'
+    prefix: '%web_backend_prefix%'
+
+oro_default:
+    path:  '%web_backend_prefix%/'
+    defaults:
+        _controller: Oro\Bundle\DashboardBundle\Controller\DashboardController::viewAction
+
+oro_auto_routing:
+    resource: .
+    type:     oro_auto
+
+oro_expose:
+    resource: .
+    type:     oro_expose

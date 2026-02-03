@@ -1,0 +1,88 @@
+# Resources/config/datagrids.yml
+datagrids:
+  acme-customer-note-grid:
+    extended_entity_name: 'Acme\Bundle\CustomerNotesBundle\Entity\CustomerNote'
+    acl_resource: acme_customer_note_view  # Grid requires VIEW permission
+    
+    source:
+      type: orm
+      query:
+        select:
+          - n.id
+          - n.note
+          - n.username
+          - n.createdAt
+        from:
+          - { table: Acme\Bundle\CustomerNotesBundle\Entity\CustomerNote, alias: n }
+    columns:
+      id:
+        label: ID
+        renderable: false
+      username:
+        label: Username
+        frontend_type: string
+      note:
+        label: Note
+        frontend_type: string
+      createdAt:
+        label: 'Created At'
+        frontend_type: datetime
+    sorters:
+      columns:
+        username:
+          data_name: n.username
+        note:
+          data_name: n.note
+        createdAt:
+          data_name: n.createdAt
+      default:
+        username: ASC
+    filters:
+      columns:
+        username:
+          type: string
+          data_name: n.username
+        note:
+          type: string
+          data_name: n.note
+        createdAt:
+          type: datetime
+          data_name: n.createdAt
+    properties:
+      id: ~
+      view_link:
+        type: url
+        route: acme_customer_note_view
+        params: [id]
+      update_link:
+        type: url
+        route: acme_customer_note_update
+        params: [id]
+      delete_link:
+        type: url
+        route: acme_customer_note_delete
+        params: [id]
+    actions:
+      view:
+        type: navigate
+        label: View
+        link: view_link
+        icon: eye
+        acl_resource: acme_customer_note_view  # Action requires VIEW permission
+      update:
+        type: navigate
+        label: Edit
+        link: update_link
+        icon: edit
+        rowAction: true
+        acl_resource: acme_customer_note_update  # Action requires EDIT permission
+      delete:
+        type: delete
+        label: Delete
+        link: delete_link
+        icon: trash
+        acl_resource: acme_customer_note_delete  # Action requires DELETE permission
+    
+    options:
+      entity_pagination: true
+      export: true

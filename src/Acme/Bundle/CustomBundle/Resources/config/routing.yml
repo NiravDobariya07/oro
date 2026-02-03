@@ -1,0 +1,4 @@
+acme_custom:
+    resource: '@AcmeCustomBundle/Controller/'
+    type: attribute
+    prefix: /custom

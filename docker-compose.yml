@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: oro_postgres_15
+    environment:
+      POSTGRES_DB: oro_commerce
+      POSTGRES_USER: oro_user
+      POSTGRES_PASSWORD: StrongPassword123!
+    ports:
+      - "5433:5432"  # Map to port 5433 to avoid conflict with existing PostgreSQL 14
+    volumes:
+      - oro_postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U oro_user -d oro_commerce"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  oro_postgres_data:
+    driver: local

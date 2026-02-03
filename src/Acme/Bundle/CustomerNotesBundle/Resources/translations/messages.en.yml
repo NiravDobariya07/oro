@@ -1,0 +1,22 @@
+# src/Acme/Bundle/CustomerNotesBundle/Resources/translations/messages.en.yml
+acme:
+    customer_note:
+        acl:
+            view:
+                label: View Customer Notes
+                description: Allows viewing customer notes
+            create:
+                label: Create Customer Notes
+                description: Allows creating new customer notes
+            update:
+                label: Edit Customer Notes
+                description: Allows editing existing customer notes
+            delete:
+                label: Delete Customer Notes
+                description: Allows deleting customer notes
+            assign:
+                label: Assign Customer Notes
+                description: Allows assigning customer notes to users
+        entity_label: Customer Note
+        entity_plural_label: Customer Notes
+        entity_description: 'Entity to store customer notes'

@@ -1,0 +1,20 @@
+[Unit]
+Description=OroCommerce Message Queue Consumer
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/html/oro_new
+ExecStart=/usr/bin/php8.4 /var/www/html/oro_new/bin/console oro:message-queue:consume --env=prod
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+# Prevent memory leaks
+RuntimeMaxSec=3600
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,48 @@
+{% extends '@OroUI/actions/view.html.twig' %}
+{% import '@OroUI/macros.html.twig' as UI %}
+
+{% block navButtons %}
+    {{ UI.button({
+        'path' : path('acme_customer_note_update', { id: entity.id }),
+        'label': 'Edit',
+        'title': 'Edit Customer Note',
+        'icon' : 'edit'
+    }) }}
+    {{ UI.button({
+        'path' : path('acme_customer_note_delete', { id: entity.id }),
+        'label': 'Delete',
+        'title': 'Delete Customer Note',
+        'icon' : 'trash',
+        'aCss' : 'btn-danger'
+    }) }}
+{% endblock %}
+
+{% block pageHeader %}
+    {% set title = 'Customer Note - ' ~ entity.username %}
+    {% include '@OroUI/page_title_block.html.twig' with { title: title } %}
+{% endblock %}
+
+{% block content_data %}
+    {% set id = 'customer-note-view' %}
+
+    {% set dataBlocks = [
+        {
+            'title': 'General Information',
+            'class': 'active',
+            'subblocks': [
+                {
+                    'data': [
+                        UI.renderProperty('Username', entity.username),
+                        UI.renderProperty('Note', entity.note)
+                    ]
+                }
+            ]
+        }
+    ] %}
+
+    {% set data = {
+        'dataBlocks': dataBlocks,
+    } %}
+
+    {{ parent() }}
+{% endblock %}
