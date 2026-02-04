@@ -20,3 +20,8 @@ acme:
         entity_label: Customer Note
         entity_plural_label: Customer Notes
         entity_description: 'Entity to store customer notes'
+    customernotes:
+        customernote:
+            entity_label: Customer Note
+            entity_plural_label: Customer Notes
+            entity_description: 'Entity to store customer notes'

@@ -2,19 +2,23 @@
 {% import '@OroUI/macros.html.twig' as UI %}
 
 {% block navButtons %}
-    {{ UI.button({
-        'path' : path('acme_customer_note_update', { id: entity.id }),
-        'label': 'Edit',
-        'title': 'Edit Customer Note',
-        'icon' : 'edit'
-    }) }}
-    {{ UI.button({
-        'path' : path('acme_customer_note_delete', { id: entity.id }),
-        'label': 'Delete',
-        'title': 'Delete Customer Note',
-        'icon' : 'trash',
-        'aCss' : 'btn-danger'
-    }) }}
+    {% if is_granted('acme_customer_note_update', entity) %}
+        {{ UI.button({
+            'path' : path('acme_customer_note_update', { id: entity.id }),
+            'label': 'Edit',
+            'title': 'Edit Customer Note',
+            'icon' : 'edit'
+        }) }}
+    {% endif %}
+    {% if is_granted('acme_customer_note_delete', entity) %}
+        {{ UI.deleteButton({
+            'dataUrl': path('acme_customer_note_delete', { id: entity.id }),
+            'dataRedirect': path('acme_customer_note_index'),
+            'aCss': 'no-hash remove-button',
+            'id': 'btn-remove-customer-note',
+            'entity_label': 'Customer Note'
+        }) }}
+    {% endif %}
 {% endblock %}
 
 {% block pageHeader %}

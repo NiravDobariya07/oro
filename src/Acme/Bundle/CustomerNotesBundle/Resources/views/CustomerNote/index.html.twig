@@ -5,11 +5,13 @@
 {% set pageTitle = 'Customer Notes' %}
 
 {% block navButtons %}
-    <div class="btn-group">
-        {{ UI.addButton({
-            'path' : path('acme_customer_note_create'),
-            'entity_label': 'Customer Note',
-            'title': 'Create Customer Note'
-        }) }}
-    </div>
+    {% if is_granted('acme_customer_note_create') %}
+        <div class="btn-group">
+            {{ UI.addButton({
+                'path' : path('acme_customer_note_create'),
+                'entity_label': 'Customer Note',
+                'title': 'Create Customer Note'
+            }) }}
+        </div>
+    {% endif %}
 {% endblock %}

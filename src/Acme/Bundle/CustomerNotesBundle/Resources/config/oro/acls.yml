@@ -1,0 +1,46 @@
+# src/Acme/Bundle/CustomerNotesBundle/Resources/config/oro/acls.yml
+acls:
+    acme_customer_note_view:
+        type: entity
+        class: Acme\Bundle\CustomerNotesBundle\Entity\CustomerNote
+        permission: VIEW
+        group_name: ""
+        label: acme.customer_note.acl.view.label
+        description: acme.customer_note.acl.view.description
+        bindings: ~
+    
+    acme_customer_note_create:
+        type: entity
+        class: Acme\Bundle\CustomerNotesBundle\Entity\CustomerNote
+        permission: CREATE
+        group_name: ""
+        label: acme.customer_note.acl.create.label
+        description: acme.customer_note.acl.create.description
+        bindings: ~
+    
+    acme_customer_note_update:
+        type: entity
+        class: Acme\Bundle\CustomerNotesBundle\Entity\CustomerNote
+        permission: EDIT
+        group_name: ""
+        label: acme.customer_note.acl.update.label
+        description: acme.customer_note.acl.update.description
+        bindings: ~
+    
+    acme_customer_note_delete:
+        type: entity
+        class: Acme\Bundle\CustomerNotesBundle\Entity\CustomerNote
+        permission: DELETE
+        group_name: ""
+        label: acme.customer_note.acl.delete.label
+        description: acme.customer_note.acl.delete.description
+        bindings: ~
+    
+    acme_customer_note_assign:
+        type: entity
+        class: Acme\Bundle\CustomerNotesBundle\Entity\CustomerNote
+        permission: ASSIGN
+        group_name: ""
+        label: acme.customer_note.acl.assign.label
+        description: acme.customer_note.acl.assign.description
+        bindings: ~
