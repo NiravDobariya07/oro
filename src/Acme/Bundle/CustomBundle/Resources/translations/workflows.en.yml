@@ -1,0 +1,22 @@
+oro:
+    workflow:
+        user_approval_flow:
+            label: 'User Approval Workflow'
+            step:
+                draft:
+                    label: 'Draft'
+                requested_approval:
+                    label: 'Requested Approval'
+                active:
+                    label: 'Active'
+                suspended:
+                    label: 'Suspended'
+            transition:
+                request_approval:
+                    label: 'Request Approval'
+                approve:
+                    label: 'Approve'
+                suspend:
+                    label: 'Suspend'
+                reactivate:
+                    label: 'Reactivate'

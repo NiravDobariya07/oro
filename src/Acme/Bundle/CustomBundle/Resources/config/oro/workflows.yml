@@ -1,0 +1,45 @@
+workflows:
+    user_approval_flow:
+        entity: Oro\Bundle\UserBundle\Entity\User
+        entity_attribute: user
+        start_step: draft
+        defaults:
+            active: true
+        steps:
+            draft:
+                order: 10
+                allowed_transitions:
+                    - request_approval
+            requested_approval:
+                order: 20
+                allowed_transitions:
+                    - approve
+            active:
+                order: 30
+                allowed_transitions:
+                    - suspend
+            suspended:
+                order: 40
+                allowed_transitions:
+                    - reactivate
+        transitions:
+            request_approval:
+                step_to: requested_approval
+                transition_definition: request_approval_definition
+                frontend_options:
+                    class: 'btn-primary'
+                    icon: 'fa-check-circle'
+            approve:
+                step_to: active
+                transition_definition: approve_definition
+            suspend:
+                step_to: suspended
+                transition_definition: suspend_definition
+            reactivate:
+                step_to: active
+                transition_definition: reactivate_definition
+        transition_definitions:
+            request_approval_definition: []
+            approve_definition: []
+            suspend_definition: []
+            reactivate_definition: []
